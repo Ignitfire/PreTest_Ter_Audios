@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<header>
+   <style>
+    body{
+        display:flex;
+        flex-direction: column;
+        background-color: lightblue;
+    }
+    #audios{
+        width: 60%;
+        display: flexbox;
+        flex-direction: line;
+    }
+    #Section_A{
+        float: left;
+    }
+    #Section_B{
+        float:right
+    }
+
+    #sendDiv{
+        width: 60%;
+    }
+
+    .error{
+        background-color: lightsalmon;
+    }
+    #Answers{
+        display: flexbox;
+        width: 50%;
+        flex-direction: line;
+        justify-content: space-around;
+    }
+    #participantAnswers{
+        float:left
+    }
+    #rightAnswers{
+        float: right;
+    }
+    h3{
+        width: 60%;
+    }
+   </style>
+</header>
+<body>
+<h1> Tests de catégorisation audio</h1>
+<h3><i>Vous devez écouter chaque audio et décider si c'est une voix d'homme, de garçon, de fille, ou de femme. il ne peut y avoir qu'une seule fois chaque voix sur chaque colonne. </i></h3>
+
+<div id="audios">
+
+    <!-- Section A -->
+
+    <div id="Section_A">
+        <h2>Colonne A</h2>
+        <section id="s1">
+            <audio controls autoplay>
+            <source src="Audios/Acc_Femme.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+            <br>
+            <button id="A1_Homme" selected=false onclick="switcher(this)">Homme</button>
+            <button id="A1_Femme" selected=false onclick="switcher(this)">Femme</button>
+            <button id="A1_Garcon" selected=false onclick="switcher(this)">Garcon</button>
+            <button id="A1_Fille" selected=false onclick="switcher(this)">Fille</button>
+            <p id="errorBar1" class="error"></p>
+
+        </section>
+
+        <br>
+
+        <section id="s2">
+            <audio controls autoplay>
+                <source src="Audios/Acc_Garcon.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+
+            <br>
+            <button id="A2_Homme" selected=false onclick="switcher(this)">Homme</button>
+            <button id="A2_Femme" selected=false onclick="switcher(this)">Femme</button>
+            <button id="A2_Garcon" selected=false onclick="switcher(this)">Garcon</button>
+            <button id="A2_Fille" selected=false onclick="switcher(this)">Fille</button>
+            <p id="errorBar2" class="error"></p>
+
+        </section>
+
+        <br>
+
+        <section id="s3">
+            <audio controls autoplay>
+                <source src="Audios/Acc_Homme.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+
+            <br>
+            <button id="A3_Homme" selected=false onclick="switcher(this)">Homme</button>
+            <button id="A3_Femme" selected=false onclick="switcher(this)">Femme</button>
+            <button id="A3_Garcon" selected=false onclick="switcher(this)">Garcon</button>
+            <button id="A3_Fille" selected=false onclick="switcher(this)">Fille</button>
+            <p id="errorBar3" class="error"></p>
+
+        </section>
+        <br>
+
+        <section id="s4">
+            <audio controls autoplay>
+            <source src="Audios/Acc_Fille.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+
+            <br>
+            <button id="A4_Homme" selected=false onclick="switcher(this)">Homme</button>
+            <button id="A4_Femme" selected=false onclick="switcher(this)">Femme</button>
+            <button id="A4_Garcon" selected=false onclick="switcher(this)">Garcon</button>
+            <button id="A4_Fille" selected=false onclick="switcher(this)">Fille</button>
+            <p id="errorBar4" class="error"></p>
+        </section>
+        <br>
+    </div>
+
+<!-- Section B -->
+
+    <div id="Section_B">
+        <h2>Colonne B</h2>
+        <section id="s5">
+            <audio controls autoplay>
+            <source src="Audios/Ral_Fille.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+            <br>
+            <button id="A5_Homme" selected=false onclick="switcher(this)">Homme</button>
+            <button id="A5_Femme" selected=false onclick="switcher(this)">Femme</button>
+            <button id="A5_Garcon" selected=false onclick="switcher(this)">Garcon</button>
+            <button id="A5_Fille" selected=false onclick="switcher(this)">Fille</button>
+            <p id="errorBar5" class="error"></p>
+            
+        </section>
+        
+        <br>
+        
+        <section id="s2">
+            <audio controls autoplay>
+            <source src="Audios/Ral_Femme.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        
+            <br>
+            <button id="A6_Homme" selected=false onclick="switcher(this)">Homme</button>
+            <button id="A6_Femme" selected=false onclick="switcher(this)">Femme</button>
+            <button id="A6_Garcon" selected=false onclick="switcher(this)">Garcon</button>
+            <button id="A6_Fille" selected=false onclick="switcher(this)">Fille</button>
+            <p id="errorBar6" class="error"></p>
+        
+        </section>
+        <br>
+        
+        <section id="s3">
+            <audio controls autoplay>
+            <source src="Audios/Ral_Homme.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        
+            <br>
+            <button id="A7_Homme" selected=false onclick="switcher(this)">Homme</button>
+            <button id="A7_Femme" selected=false onclick="switcher(this)">Femme</button>
+            <button id="A7_Garcon" selected=false onclick="switcher(this)">Garcon</button>
+            <button id="A7_Fille" selected=false onclick="switcher(this)">Fille</button>
+            <p id="errorBar7" class="error"></p>
+            
+        </section>
+        <br>
+        
+        <section id="s4">
+            <audio controls autoplay>
+            <source src="Audios/Ral_Garcon.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        
+            <br>
+            <button id="A8_Homme" selected=false onclick="switcher(this)">Homme</button>
+            <button id="A8_Femme" selected=false onclick="switcher(this)">Femme</button>
+            <button id="A8_Garcon" selected=false onclick="switcher(this)">Garcon</button>
+            <button id="A8_Fille" selected=false onclick="switcher(this)">Fille</button>
+            <p id="errorBar8" class="error"></p>
+        </section>
+        <br>
+    </div>
+
+</div>
+
+<div id="sendDiv">
+    <input type="button" id="sendButton" value="Valider les réponses" onclick="getAnswers()"/>
+    <p id="errorBarFinal" class="error"></p>
+</div>
+
+<div id="Answers">
+    <div id="participantAnswers"></div>
+    <div id="rightAnswers"></div>
+</div>
+<div id="endText"></div>
+
+</body>
+<script type="text/javascript" src="app.js"></script>
+</html>
